@@ -13,6 +13,7 @@
 		C470C8621B5F73A8009D7F01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C470C8611B5F73A8009D7F01 /* Images.xcassets */; };
 		C470C8651B5F73A8009D7F01 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C470C8631B5F73A8009D7F01 /* LaunchScreen.xib */; };
 		C470C8711B5F73A8009D7F01 /* reminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470C8701B5F73A8009D7F01 /* reminderTests.swift */; };
+		C4D108931B5F994700AB696F /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D108921B5F994700AB696F /* Memo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C470C86A1B5F73A8009D7F01 /* reminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C470C86F1B5F73A8009D7F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C470C8701B5F73A8009D7F01 /* reminderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reminderTests.swift; sourceTree = "<group>"; };
+		C4D108921B5F994700AB696F /* Memo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				C470C85A1B5F73A8009D7F01 /* AppDelegate.swift */,
 				C470C85C1B5F73A8009D7F01 /* ViewController.swift */,
 				C470C85E1B5F73A8009D7F01 /* Main.storyboard */,
+				C4D108921B5F994700AB696F /* Memo.swift */,
 				C470C8611B5F73A8009D7F01 /* Images.xcassets */,
 				C470C8631B5F73A8009D7F01 /* LaunchScreen.xib */,
 				C470C8581B5F73A8009D7F01 /* Supporting Files */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D108931B5F994700AB696F /* Memo.swift in Sources */,
 				C470C85D1B5F73A8009D7F01 /* ViewController.swift in Sources */,
 				C470C85B1B5F73A8009D7F01 /* AppDelegate.swift in Sources */,
 			);
@@ -411,6 +415,7 @@
 				C470C8761B5F73A8009D7F01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C470C8771B5F73A8009D7F01 /* Build configuration list for PBXNativeTarget "reminderTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				C470C8791B5F73A8009D7F01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

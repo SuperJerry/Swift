@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:reminder.xcodeproj">
+      location = "self:/Users/jerry/Desktop/Swift/reminder/reminder.xcodeproj">
    </FileRef>
 </Workspace>

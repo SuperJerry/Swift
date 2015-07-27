@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class Memo {
+    var title: String!
+    var description: String!
+    init(passtitle: String, passdescription: String){
+        title = passtitle
+        description = passdescription
+    }
+}
