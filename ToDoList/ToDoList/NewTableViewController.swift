@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class NewTableViewController: UITableViewController {
     @IBOutlet weak var newtitle: UITextField!
@@ -87,6 +88,12 @@ class NewTableViewController: UITableViewController {
         var destinationviewcontroller = segue.destinationViewController as! ViewController
         destinationviewcontroller.memolist.append(memo)
         destinationviewcontroller.tableview.reloadData()
+        
+        var object = PFObject(className: "Reminder")
+        object["title"] = newtitle.text
+        object["desciption"] = newdescription.text
+        object.saveInBackground()
+        
         
     }
 

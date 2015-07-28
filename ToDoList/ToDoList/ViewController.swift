@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     var memolist = [Memo]()
+    var array = NSArray()
+    
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var query = PFQuery(className: "Reminder")
+        array = query.findObjects()!
+        for i in array{
+            var memo = Memo(passtitle: i["title"] as! String, passdescription: i["desciption"] as! String)
+            memolist.append(memo)
+        }
+      
+        
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,6 +57,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             var row = tableview.indexPathForSelectedRow()?.row
             var destination = segue.destinationViewController as! MemotableviewTableViewController
             destination.memo = memolist[row!]
+        }
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            memolist.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+            
+            var object = array[indexPath.row] as! PFObject
+            object.deleteInBackground()
         }
     }
     
