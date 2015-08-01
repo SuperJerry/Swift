@@ -1,0 +1,10 @@
+
+print "hahahahahaah!"
+print "hahahahahaah!"
+print "hahahahahaah!"
+print "hahahahahaah!"
+print "hahahahahaah!"
+print "hahahahahaah!"
+print "hahahahahaah!"
+print "hahahahahaah!"
+print "hahahahahaah!"

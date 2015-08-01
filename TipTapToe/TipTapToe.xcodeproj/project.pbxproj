@@ -13,6 +13,7 @@
 		C470C8341B5F5D8F009D7F01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C470C8331B5F5D8F009D7F01 /* Images.xcassets */; };
 		C470C8371B5F5D8F009D7F01 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C470C8351B5F5D8F009D7F01 /* LaunchScreen.xib */; };
 		C470C8431B5F5D8F009D7F01 /* TipTapToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470C8421B5F5D8F009D7F01 /* TipTapToeTests.swift */; };
+		C488EB381B69C77600CD8491 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = C488EB371B69C77600CD8491 /* Colours.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		C470C83C1B5F5D8F009D7F01 /* TipTapToeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipTapToeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C470C8411B5F5D8F009D7F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C470C8421B5F5D8F009D7F01 /* TipTapToeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTapToeTests.swift; sourceTree = "<group>"; };
+		C488EB351B69C77500CD8491 /* TipTapToe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipTapToe-Bridging-Header.h"; sourceTree = "<group>"; };
+		C488EB361B69C77600CD8491 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		C488EB371B69C77600CD8491 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +85,11 @@
 				C470C82E1B5F5D8F009D7F01 /* ViewController.swift */,
 				C470C8301B5F5D8F009D7F01 /* Main.storyboard */,
 				C470C8331B5F5D8F009D7F01 /* Images.xcassets */,
+				C488EB361B69C77600CD8491 /* Colours.h */,
+				C488EB371B69C77600CD8491 /* Colours.m */,
 				C470C8351B5F5D8F009D7F01 /* LaunchScreen.xib */,
 				C470C82A1B5F5D8E009D7F01 /* Supporting Files */,
+				C488EB351B69C77500CD8491 /* TipTapToe-Bridging-Header.h */,
 			);
 			path = TipTapToe;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 			files = (
 				C470C82F1B5F5D8F009D7F01 /* ViewController.swift in Sources */,
 				C470C82D1B5F5D8F009D7F01 /* AppDelegate.swift in Sources */,
+				C488EB381B69C77600CD8491 /* Colours.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +350,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TipTapToe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TipTapToe/TipTapToe-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +363,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TipTapToe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TipTapToe/TipTapToe-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +424,7 @@
 				C470C8481B5F5D8F009D7F01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C470C8491B5F5D8F009D7F01 /* Build configuration list for PBXNativeTarget "TipTapToeTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +433,7 @@
 				C470C84B1B5F5D8F009D7F01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

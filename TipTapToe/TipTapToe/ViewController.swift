@@ -12,6 +12,9 @@ class ViewController: UIViewController {
     var click = 0
     var result = [0,0,0,0,0,0,0,0,0]
     var Mode = 0
+    var xc = 0
+    var oc = 0
+    
     @IBOutlet weak var again: UILabel!
     @IBOutlet weak var button1: UIButton!
     
@@ -35,28 +38,31 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var owin: UILabel!
     
-    var xc = 0
-    var oc = 0
-    
     @IBAction func playerMode(sender: UIButton) {
         Mode = 0
+        clear()
         xc = 0
         oc = 0
         xwin.text = " X Wins: \(xc)"
         owin.text = " O Wins: \(oc)"
+        again.text = ""
     }
     
     @IBAction func AIMode(sender: UIButton) {
         Mode = 1
+        clear()
         xc = 0
         oc = 0
         xwin.text = " X Wins: \(xc)"
         owin.text = " O Wins: \(oc)"
+        again.text = ""
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //self.view.backgroundColor = UIColor.skyBlueColor()
+        //self.view.backgroundColor = UIColor.skyBlueColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,13 +77,13 @@ class ViewController: UIViewController {
                 click++
                 if click % 2 == 0{
                 sender.setTitle("o", forState: UIControlState.Normal)
-                result[0] = 1
+                result[0] = 2
                 }else if click % 2 != 0{
                 sender.setTitle("x", forState: UIControlState.Normal)
-                result[0] = 2
+                result[0] = 1
                 }
-                if click > 5{
-                    var result = checkboard()
+                if click > 4{
+                    var result = checkboard1()
                     again.text = result
                 }
             }
@@ -97,19 +103,19 @@ class ViewController: UIViewController {
         
     }
     @IBAction func buttom2(sender: UIButton) {
-        if Mode == 0{
-            if result[1] != 0{
-            }else{
+        if Mode == 0 {
+            if result[1] != 0 {
+            }else {
                 click++
                 if click % 2 == 0{
-                sender.setTitle("o", forState: UIControlState.Normal)
-                result[1] = 1
+                    sender.setTitle("o", forState: UIControlState.Normal)
+                    result[1] = 2
                 }else if click % 2 != 0{
-                sender.setTitle("x", forState: UIControlState.Normal)
-                result[1] = 2
+                    sender.setTitle("x", forState: UIControlState.Normal)
+                    result[1] = 1
                 }
-                if click > 5{
-                    var result = checkboard()
+                if click > 4{
+                    var result = checkboard1()
                     again.text = result
                 }
             }
@@ -129,19 +135,19 @@ class ViewController: UIViewController {
     }
    
     @IBAction func buttom3(sender: UIButton) {
-        if Mode == 0{
-            if result[2] != 0{
-            }else{
+        if Mode == 0 {
+            if result[2] != 0 {
+            }else {
                 click++
                 if click % 2 == 0{
-                sender.setTitle("o", forState: UIControlState.Normal)
-                result[2] = 1
+                    sender.setTitle("o", forState: UIControlState.Normal)
+                    result[2] = 2
                 }else if click % 2 != 0{
-                sender.setTitle("x", forState: UIControlState.Normal)
-                result[2] = 2
+                    sender.setTitle("x", forState: UIControlState.Normal)
+                    result[2] = 1
                 }
-                if click > 5{
-                    var result = checkboard()
+                if click > 4{
+                    var result = checkboard1()
                     again.text = result
                 }
             }
@@ -160,18 +166,19 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func buttom4(sender: UIButton) {
-        if Mode == 0{
-            if result[3] != 0{
-            }else{
+        if Mode == 0 {
+            if result[3] != 0 {
+            }else {
+                click++
                 if click % 2 == 0{
-                sender.setTitle("o", forState:UIControlState.Normal)
-                result[3] = 1
+                    sender.setTitle("o", forState: UIControlState.Normal)
+                    result[3] = 2
                 }else if click % 2 != 0{
-                sender.setTitle("x", forState:UIControlState.Normal)
-                result[3] = 2
+                    sender.setTitle("x", forState: UIControlState.Normal)
+                    result[3] = 1
                 }
-                if click > 5{
-                    var result = checkboard()
+                if click > 4{
+                    var result = checkboard1()
                     again.text = result
                 }
             }
@@ -190,18 +197,19 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func buttom5(sender: UIButton) {
-        if Mode == 0{
-            if result[4] != 0{
-            }else{
+        if Mode == 0 {
+            if result[4] != 0 {
+            }else {
+                click++
                 if click % 2 == 0{
-                sender.setTitle("o", forState: UIControlState.Normal)
-                result[4] = 1
+                    sender.setTitle("o", forState: UIControlState.Normal)
+                    result[4] = 2
                 }else if click % 2 != 0{
-                sender.setTitle("x", forState: UIControlState.Normal)
-                result[4] = 2
+                    sender.setTitle("x", forState: UIControlState.Normal)
+                    result[4] = 1
                 }
-                if click > 5{
-                    var result = checkboard()
+                if click > 4{
+                    var result = checkboard1()
                     again.text = result
                 }
             }
@@ -220,19 +228,19 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func buttom6(sender: UIButton) {
-        if Mode == 0{
-            if result[5] != 0{
-            }else{
+        if Mode == 0 {
+            if result[5] != 0 {
+            }else {
                 click++
                 if click % 2 == 0{
-                sender.setTitle("o", forState: UIControlState.Normal)
-                result[5] = 1
+                    sender.setTitle("o", forState: UIControlState.Normal)
+                    result[5] = 2
                 }else if click % 2 != 0{
-                sender.setTitle("x", forState: UIControlState.Normal)
-                result[5] = 2
+                    sender.setTitle("x", forState: UIControlState.Normal)
+                    result[5] = 1
                 }
-                if click > 5{
-                    var result = checkboard()
+                if click > 4{
+                    var result = checkboard1()
                     again.text = result
                 }
             }
@@ -252,19 +260,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttom7(sender: UIButton) {
-        if Mode == 0{
-            if result[6] != 0{
-            }else{
+        if Mode == 0 {
+            if result[6] != 0 {
+            }else {
                 click++
                 if click % 2 == 0{
-                sender.setTitle("o", forState: UIControlState.Normal)
-                result[6] = 1
+                    sender.setTitle("o", forState: UIControlState.Normal)
+                    result[6] = 2
                 }else if click % 2 != 0{
-                sender.setTitle("x", forState: UIControlState.Normal)
-                result[6] = 2
+                    sender.setTitle("x", forState: UIControlState.Normal)
+                    result[6] = 1
                 }
-                if click > 5{
-                    var result = checkboard()
+                if click > 4{
+                    var result = checkboard1()
                     again.text = result
                 }
             }
@@ -284,19 +292,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttom8(sender: UIButton) {
-        if Mode == 0{
-            if result[7] != 0{
-            }else{
+        if Mode == 0 {
+            if result[7] != 0 {
+            }else {
                 click++
                 if click % 2 == 0{
-                sender.setTitle("o", forState: UIControlState.Normal)
-                result[7] = 1
+                    sender.setTitle("o", forState: UIControlState.Normal)
+                    result[7] = 2
                 }else if click % 2 != 0{
-                sender.setTitle("x", forState: UIControlState.Normal)
-                result[7] = 2
+                    sender.setTitle("x", forState: UIControlState.Normal)
+                    result[7] = 1
                 }
-                if click > 5{
-                    var result = checkboard()
+                if click > 4{
+                    var result = checkboard1()
                     again.text = result
                 }
             }
@@ -315,19 +323,19 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func buttom9(sender: UIButton) {
-        if Mode == 0{
-            if result[8] != 0{
-            }else{
+        if Mode == 0 {
+            if result[8] != 0 {
+            }else {
                 click++
                 if click % 2 == 0{
-                sender.setTitle("o", forState: UIControlState.Normal)
-                result[8] = 1
+                    sender.setTitle("o", forState: UIControlState.Normal)
+                    result[8] = 2
                 }else if click % 2 != 0{
-                sender.setTitle("x", forState: UIControlState.Normal)
-                result[8] = 2
+                    sender.setTitle("x", forState: UIControlState.Normal)
+                    result[8] = 1
                 }
-                if click > 5{
-                    var result = checkboard()
+                if click > 4{
+                    var result = checkboard1()
                     again.text = result
                 }
             }
@@ -359,121 +367,122 @@ class ViewController: UIViewController {
         click = 0
         result = [0,0,0,0,0,0,0,0,0]
     }
-    func checkboard() -> String {
+    
+    func checkboard1() -> String {
         if result[0] == result[1] && result[1] == result[2] && result[0] != 0{
-            if result[0] == 1{
+            if click % 2 == 1{
                 clear()
                 xc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "Player wins"
+                return "Player 1 wins"
             }else{
                 clear()
                 oc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "AI wins"
+                return "Player 2 wins"
             }
         }else if result[3] == result[4] && result[4] == result[5] && result[3] != 0{
-            if result[3] == 1{
+            if click % 2 == 1{
                 clear()
                 xc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "Player wins"
+                return "Player 1 wins"
             }else{
                 clear()
                 oc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "AI wins"
+                return "Player 2 wins"
             }
         }else if result[6] == result[7] && result[7] == result[8] && result[6] != 0{
-            if result[6] == 1{
+            if click % 2 == 1{
                 clear()
                 xc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "Player wins"
+                return "Player 1 wins"
             }else{
                 clear()
                 oc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "AI wins"
+                return "Player 2 wins"
             }
         }else if result[0] == result[3] && result[3] == result[6] && result[6] != 0{
-            if result[0] == 1{
+            if click % 2 == 1{
                 clear()
                 xc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "Player wins"
+                return "Player 1 wins"
             }else{
                 clear()
                 oc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "AI wins"
+                return "Player 2 wins"
             }
         }else if result[1] == result[4] && result[4] == result[7] && result[4] != 0{
-            if result[1] == 1{
+            if click % 2 == 1{
                 clear()
                 xc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "Player wins"
+                return "Player 1 wins"
             }else{
                 clear()
                 oc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "AI wins"
+                return "Player 2 wins"
             }
         }else if result[2] == result[5] && result[5] == result[8] && result[5] != 0{
-            if result[2] == 1{
+            if click % 2 == 1{
                 clear()
                 xc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "Player wins"
+                return "Player 1 wins"
             }else{
                 clear()
                 oc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "AI wins"
+                return "Player 2 wins"
             }
         }else if result[0] == result[4] && result[4] == result[8] && result[4] != 0{
-            if result[0] == 1{
+            if click % 2 == 1{
                 clear()
                 xc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "Player wins"
+                return "Player 1 wins"
             }else{
                 clear()
                 oc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "AI wins"
+                return "Player 2 wins"
             }
         }else if result[2] == result[4] && result[4] == result[6] && result[2] != 0{
-            if result[2] == 1{
+            if click % 2 == 1{
                 clear()
                 xc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "Player wins"
+                return "Player 1 wins"
             }else{
                 clear()
                 oc++
                 xwin.text = " X Wins: \(xc)"
                 owin.text = " O Wins: \(oc)"
-                return "AI wins"
+                return "Player 2 wins"
             }
         }else{
-            if click > 4 {
+            if click > 8 {
                 clear()
                 return "Tie"
             }else {
@@ -482,6 +491,127 @@ class ViewController: UIViewController {
         }
     }
     
+    func checkboard() -> String {
+        if click < 5{
+            if result[0] == result[1] && result[1] == result[2] && result[0] != 0{
+                if result[0] == 1{
+                    clear()
+                    xc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "Player wins"
+                }else{
+                    clear()
+                    oc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "AI wins"
+                }
+            }else if result[3] == result[4] && result[4] == result[5] && result[3] != 0{
+                if result[3] == 1{
+                    clear()
+                    xc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "Player wins"
+                }else{
+                    clear()
+                    oc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "AI wins"
+                }
+            }else if result[6] == result[7] && result[7] == result[8] && result[6] != 0{
+                if result[6] == 1{
+                    clear()
+                    xc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "Player wins"
+                }else{
+                    clear()
+                    oc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "AI wins"
+                }
+            }else if result[0] == result[3] && result[3] == result[6] && result[6] != 0{
+                if result[0] == 1{
+                    clear()
+                    xc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "Player wins"
+                }else{
+                    clear()
+                    oc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "AI wins"
+                }
+            }else if result[1] == result[4] && result[4] == result[7] && result[4] != 0{
+                if result[1] == 1{
+                    clear()
+                    xc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "Player wins"
+                }else{
+                    clear()
+                    oc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "AI wins"
+                }
+            }else if result[2] == result[5] && result[5] == result[8] && result[5] != 0{
+                if result[2] == 1{
+                    clear()
+                    xc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "Player wins"
+                }else{
+                    clear()
+                    oc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "AI wins"
+                }
+            }else if result[0] == result[4] && result[4] == result[8] && result[4] != 0{
+                if result[0] == 1{
+                    clear()
+                    xc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "Player wins"
+                }else{
+                    clear()
+                    oc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "AI wins"
+                }
+            }else if result[2] == result[4] && result[4] == result[6] && result[2] != 0{
+                if result[2] == 1{
+                    clear()
+                    xc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "Player wins"
+                }else{
+                    clear()
+                    oc++
+                    xwin.text = " X Wins: \(xc)"
+                    owin.text = " O Wins: \(oc)"
+                    return "AI wins"
+                }
+            }
+        }else{
+            clear()
+            return "Tie"
+        }
+        return ""
+    }
     func AIsolve() {
         if result[0] == result[1] && result[0] == 2 && result[2] == 0{
             button3.setTitle("o", forState: UIControlState.Normal)
@@ -632,8 +762,6 @@ class ViewController: UIViewController {
             var but = temp
             while result[but] != 0 && click < 5{
                 but = Int(arc4random() % 9)
-                println(result[but])
-                println(but)
             }
             if but == 0{
                 button1.setTitle("o", forState: UIControlState.Normal)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import Cocoa
 
 class ViewController: UIViewController {
 
@@ -26,15 +27,30 @@ class ViewController: UIViewController {
         button.backgroundColor = UIColor.redColor()
         var num = Number.text.toInt()
         if num == 2{
-            Prime.text = "Prime Number"
+            Prime.text = "Is Prime Number"
+        }else if num == 3{
+            Prime.text = "Is Prime Number"
         }
-        for(var i=2;i < num; i++){
+        
+        var i = 0
+        
+        func sqrt(value: Int) -> Int{
+            for(i = 2; i*i <= value; i++){
+                if (i*i + 2*i + 1) > value {
+                    return i
+                }
+            }
+            return 1
+        }
+        
+        println(sqrt(num!))
+        for(var i=2;i <= sqrt(num!); i++){
             if num! % i == 0{
                 Prime.text = "Not Prime Number!"
                 break
             }
             else{
-                Prime.text = "Prime Number"
+                Prime.text = "Is Prime Number"
             }
             
         }
